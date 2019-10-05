@@ -53,8 +53,8 @@ module.exports = () => {
 		{
 			title: 'Install dependencies',
 			task: async () => {
-				await execa('npm', [
-					'install',
+				await execa('yarn', [
+					'add',
 					'meow',
 					'ink',
 					'react',
@@ -62,9 +62,9 @@ module.exports = () => {
 					'import-jsx'
 				]);
 
-				return execa('npm', [
-					'install',
-					'--save-dev',
+				return execa('yarn', [
+					'add',
+					'-D',
 					'xo',
 					'ava',
 					'ink-testing-library',
@@ -79,7 +79,7 @@ module.exports = () => {
 		},
 		{
 			title: 'Link executable',
-			task: () => execa('npm', ['link'])
+			task: () => execa('yarn', ['link'])
 		}
 	]);
 
